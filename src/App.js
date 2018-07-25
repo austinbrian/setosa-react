@@ -9,6 +9,11 @@ class App extends Component {
       <div className="App">
           <h1>Setosa React</h1>
           <BarGraph data={ data }/>
+          <div>
+              <input placeholder="sepal length"/>
+              <input placeholder="sepal width"/>
+              <input placeholder="petal length"/>               
+          </div>
       </div>
     );
   }
