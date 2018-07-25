@@ -8,7 +8,7 @@ class App extends Component {
     return (
       <div className="App">
           <h1>Setosa React</h1>
-          <BarGraph data={data}/>
+          <BarGraph data={ data }/>
       </div>
     );
   }

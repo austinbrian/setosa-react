@@ -46,15 +46,24 @@ const BarGraph = ({ data }) => {
       width={dataLength * (itemWidth + itemMargin)}
       height={chartHeight}
     >
-      {massagedData.map((datum, index) => (
-        <Bar
-          key={datum.name}
-          x={index * (itemWidth + itemMargin)}
-          y={0}
-          width={itemWidth}
-          height={datum.repos}
-        />
-      ))}
+      {massagedData.map((datum, index) => {
+          /*
+          This step adds a step that makes the chart x-axis up, and does so by
+          simply subtracting the itemHeight object (the total for each col) by the
+          height of the chart itself, which is declared in the Chart component and
+          setting that value to the y component below.
+          */
+          const itemHeight = datum.repos
+          return (
+            <Bar
+              key={datum.name}
+              x={index * (itemWidth + itemMargin)}
+              y={chartHeight - itemHeight}
+              width={itemWidth}
+              height={itemHeight}
+            />
+          )
+        })}
     </Chart>
   )
 }
