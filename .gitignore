@@ -22,4 +22,6 @@ yarn-error.log*
 
 # python stuff
 *.pyc
-/model/__pychache__
+__pycache__/
+
+/env
