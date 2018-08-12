@@ -9,10 +9,10 @@ This repo will generate a machine-learning prediction model on the iris dataset,
 To view it, run `npm start` after cloning the repo.
 
 ## Current Status
--[x] Create python script that classifies using iris dataset
--[x] Create react app framework
--[x] Create outline for graphs that change based on estimated value inputs
--[] Create react components that take in `predict_proba` estimates
--[] Create react components that feed in petal/sepal width/length values
--[] Create state for data callbacks
+- [x] Create python script that classifies using iris dataset
+- [x] Create react app framework
+- [x] Create outline for graphs that change based on estimated value inputs
+- [] Create react components that take in `predict_proba` estimates
+- [] Create react components that feed in petal/sepal width/length values
+- [] Create state for data callbacks
 
