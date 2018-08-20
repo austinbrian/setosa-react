@@ -29,31 +29,28 @@ const BarGraph = ({ data }) => {
 
   const dataLength = data.length
 
-  // Normalize data, we'll reduce all sizes to 25% of their original value
-  const massagedData = data.map(datum =>
-    Object.assign({}, datum, { repos: datum.repos * 0.25 })
-  )
 
-  const mostRepos = massagedData.reduce((acc, cur) => {
-    const { repos } = cur
-    return repos > acc ? repos : acc
-  }, 0)
+  // const mostPct = data.reduce((acc, data.cur) => {
+  //   const { pct } = cur
+  //   return pct > acc ? pct : acc
+  // }, 0)
 
-  const chartHeight = mostRepos
+  // const chartHeight = mostPct
+  const chartHeight = 6;
 
   return (
     <Chart
       width={dataLength * (itemWidth + itemMargin)}
       height={chartHeight}
     >
-      {massagedData.map((datum, index) => {
+      {data.map((datum, index) => {
           /*
           This step adds a step that makes the chart x-axis up, and does so by
           simply subtracting the itemHeight object (the total for each col) by the
           height of the chart itself, which is declared in the Chart component and
           setting that value to the y component below.
           */
-          const itemHeight = datum.repos
+          const itemHeight = datum.pct
           return (
             <Bar
               key={datum.name}
